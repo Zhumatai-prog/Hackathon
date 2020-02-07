@@ -3,4 +3,9 @@ from django.http import HttpResponse
 
 
 def index(request):
-	return HttpResponse('<h1>HEllo world</h1>')
+	return render(request, '../templates/base.html')
+
+
+# def posts_list(request):
+# 	posts = Post.objects.all()
+# 	return render(request, 'blog/index.html', context={'posts': posts})
