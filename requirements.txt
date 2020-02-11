@@ -1,2 +1,4 @@
 django >= 3
 pillow
+django-rest-knox
+django-nested-admin

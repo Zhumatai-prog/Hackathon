@@ -58,10 +58,11 @@ backgrounds: [
 { src: '../static/assets/img/13.jpg', fade: 1000, delay: 9000 },
 { src: '../static/assets/img/14.jpg', fade: 1000, delay: 9000 },
 ]
-})('overlay', {
+})
+// ('overlay', {
 /** SLIDESHOW OVERLAY IMAGE **/
-src: 'assets/js/vegas/overlays/96.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
-});
+// src: '../static/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
+// });
 
 
 /*====================================
