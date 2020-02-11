@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+{% load static %}
 <html lang="en" class="no-js" >
 <head>
 	<meta charset="utf-8" />
@@ -10,6 +11,7 @@
 <![endif]-->
 <title>LIGHT WAVE</title>
 <!-- BOOTSTRAP CORE CSS -->
+<link href="{% static 'assets/css/bootstrap.css' %}">
 <link href="../static/assets/css/bootstrap.css" rel="stylesheet" />
 <!-- ION ICONS STYLES -->
 <link href="../static/assets/css/ionicons.css" rel="stylesheet" />
@@ -46,11 +48,11 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="base.html">HOME</a></li>
-					<li><a href="test.html">TEST</a></li>
-					<li><a href="courses.html">ENGLISH COURSES</a></li>
-					<li><a href="team.html">TEAM</a></li>
-					<li><a href="profile.html">PROFILE</a></li>
+					<li><a href="{% url 'index' %}">HOME</a></li>
+					<li><a href="{% url 'test_url' %}">TEST</a></li>
+					<li><a href="{% url 'courses_url' %}">ENGLISH COURSES</a></li>
+					<li><a href="{% url 'team_url' %}">TEAM</a></li>
+					<li><a href="{% url 'profile_url' %}">PROFILE</a></li>
 				</ul>
 			</div>
 
@@ -58,67 +60,69 @@
 	</div>
 	<!--MENU SECTION END-->
 	<!--HOME SECTION START-->
-	<div id="home" >
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
-					<div id="carousel-slider" data-ride="carousel" class="carousel slide  animate-in" data-anim-type="fade-in-up">
+	{% block content %}
+		<div id="home" >
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
+						<div id="carousel-slider" data-ride="carousel" class="carousel slide  animate-in" data-anim-type="fade-in-up">
 
-						<div class="carousel-inner">
-							<div class="item active">
+							<div class="carousel-inner">
+								<div class="item active">
 
-								<h3>
-									Consectetur adipiscing elit felis dolor felis dolor vitae
-								</h3>
-								<p>
-									Lorem ipsumdolor sitamet, consect adipiscing elit
-									Lorem ipsumdolor sitamet, consect adipiscing elit.
-									Lorem ipsumdolor sitamet, consect adipiscing elit
-									Lorem ipsumdolor sitamet, consect adipiscing elit.
-								</p>
+									<h3>
+										Consectetur adipiscing elit felis dolor felis dolor vitae
+									</h3>
+									<p>
+										Lorem ipsumdolor sitamet, consect adipiscing elit
+										Lorem ipsumdolor sitamet, consect adipiscing elit.
+										Lorem ipsumdolor sitamet, consect adipiscing elit
+										Lorem ipsumdolor sitamet, consect adipiscing elit.
+									</p>
+								</div>
+								<div class="item">
+									<h3>
+										Lorem ipsumdolor sitamet, consect adipiscing elit
+									</h3>
+									<p>
+										Lorem ipsumdolor sitamet, consect adipiscing elit
+										Lorem ipsumdolor sitamet, consect adipiscing elit.
+										Lorem ipsumdolor sitamet, consect adipiscing elit
+										Lorem ipsumdolor sitamet, consect adipiscing elit.
+									</p>
+								</div>
+
 							</div>
-							<div class="item">
-								<h3>
-									Lorem ipsumdolor sitamet, consect adipiscing elit
-								</h3>
-								<p>
-									Lorem ipsumdolor sitamet, consect adipiscing elit
-									Lorem ipsumdolor sitamet, consect adipiscing elit.
-									Lorem ipsumdolor sitamet, consect adipiscing elit
-									Lorem ipsumdolor sitamet, consect adipiscing elit.
-								</p>
-							</div>
+
 
 						</div>
 
 
 					</div>
-
-
 				</div>
-			</div>
-			<div class="row animate-in" data-anim-type="fade-in-up">
-				<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2 scroll-me">
+				<div class="row animate-in" data-anim-type="fade-in-up">
+					<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2 scroll-me">
 
 
-					<p >
-						This line is fixed so you can write anything
+						<p >
+							This line is fixed so you can write anything
 
-					</p>
-					<div class="social">
-						<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-facebook "></i></a>
-						<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-twitter"></i></a>
-						<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-google-plus "></i></a>
-						<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-linkedin "></i></a>
-						<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-pinterest "></i></a>
-						<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-github "></i></a>
+						</p>
+						<div class="social">
+							<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-facebook "></i></a>
+							<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-twitter"></i></a>
+							<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-google-plus "></i></a>
+							<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-linkedin "></i></a>
+							<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-pinterest "></i></a>
+							<a href="#" class="btn button-custom btn-custom-one" ><i class="fa fa-github "></i></a>
+						</div>
+						<a href="#services" class=" btn button-custom btn-custom-two">See Service List </a>
 					</div>
-					<a href="#services" class=" btn button-custom btn-custom-two">See Service List </a>
 				</div>
 			</div>
-		</div>
 
-	</div>
+		</div>
+	{% endblock %}
 	
 
 	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->

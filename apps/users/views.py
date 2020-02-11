@@ -1,11 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 
 def index(request):
-	return render(request, '../templates/base.html')
+	# return render(request, '../templates/base.html')
+	return render(request, 'base.html')
 
+def test(request):
+	return render(request, 'test.html')
 
-# def posts_list(request):
-# 	posts = Post.objects.all()
-# 	return render(request, 'blog/index.html', context={'posts': posts})
+def courses(request):
+	return render(request, 'courses.html')
+
+def team(request):
+	return render(request, 'team.html')
+
+def profile(request):
+	return render(request, 'profile.html')

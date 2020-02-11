@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.users',
     'apps.courses',
+    'apps.quizzes',
+    'nested_admin',
+    'rest_framework',
+    'knox',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'Asia/Bishkek'
 
@@ -121,8 +125,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+STATIC_URL = '/static/assets/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static/assets'),
+)
 
-]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':('knox.auth.TokenAuthentication',)
+}
+
+REST_KNOX = {
+    'TOKEN_TTL': None,
+    'TOKEN_LIMIT_PER_USER': None,
+}
